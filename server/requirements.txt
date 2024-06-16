@@ -1,0 +1,16 @@
+# utils:
+    # pillow
+    # gradio
+    load-dotenv
+# # CLIP:
+#     transformers
+#     torch
+# LLM:
+    openai
+# # vectorstore:
+#     faiss-gpu
+#     langchain-community
+#     tiktoken
+# server backend:
+    uvicorn
+    fastapi
