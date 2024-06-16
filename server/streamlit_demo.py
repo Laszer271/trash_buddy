@@ -43,6 +43,9 @@ def main():
     if uploaded_file is not None:
         # Open the image file
         image = Image.open(uploaded_file)
+        # resize the image to be at most 524x524 but same aspect ratio
+        image.thumbnail((524, 524))
+
         st.image(image, caption="Uploaded Image.", use_column_width=True)
 
         # Process the image using the custom function

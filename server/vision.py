@@ -3,6 +3,8 @@ import os
 import load_dotenv
 import base64
 
+from all_text import ALL_TEXT
+
 load_dotenv.load_dotenv()
 
 class GptVision:
@@ -14,15 +16,12 @@ class GptVision:
             return base64.b64encode(image_file.read()).decode('utf-8')
 
     def describe_image(self, base64_image):
-        all_text = open("all_text.txt", "r").read().replace("\n\n", "\n")
-
-
         prompt = f'''
         You will use trash image and guidlines to provide an instruction for trash segregation.
         Instruction can be simple or require few steps.
 
         Here are example items and some guidlines:
-        {all_text}
+        {ALL_TEXT}
 
 
         [Simple Example]
