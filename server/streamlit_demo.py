@@ -35,10 +35,11 @@ def custom_function(image):
     return _process_answer(response.content)
 
 def main():
-    st.title("Image Upload and Processing Demo")
+    st.title("TrashBuddy")
+    st.write("Let's get your trash sorted!")
 
     # Upload image
-    uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
+    uploaded_file = st.file_uploader("Choose an image to classify...", type=["jpg", "jpeg", "png"])
 
     if uploaded_file is not None:
         # Open the image file
@@ -53,7 +54,7 @@ def main():
 
         # Display the results in a text area, each entry on a new line
         result_text = "\n".join(result)
-        st.text_area("Result", result_text, height=200)
+        st.text_area("Instructions", result_text, height=400)
 
 if __name__ == "__main__":
     main()
